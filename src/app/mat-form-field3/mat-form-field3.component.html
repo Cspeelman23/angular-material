@@ -1,0 +1,120 @@
+<h1>
+    Welcome to {{ title }}!
+</h1>
+
+<div class="center">
+    <a routerLink="/mat-form-field1">< Page 1</a>
+    <a routerLink="/mat-form-field2">< Page 2</a>
+    <a routerLink="/mat-form-field4">Page 4 ></a>
+</div>
+<br>
+<mat-divider></mat-divider>
+<div class="example-container">
+    <br>
+
+<mat-radio-group aria-label="Select an option">
+    <mat-radio-button  (click)="toggle(1)" value="1">We're not gonna take it</mat-radio-button>
+    <mat-radio-button  (click)="toggle(2)" value="2">I stole this image</mat-radio-button>
+</mat-radio-group>
+
+<p *ngIf="show_text" >No, we ain't gonna take it</p>
+<mat-card *ngIf="show_img">
+  <mat-card-content>
+      <img mat-card-image id="picture" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  </mat-card-content>
+</mat-card>
+</div>
+<!--_____________________________________________________________________ -->
+
+<br>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Expansion Panel
+        </mat-panel-title>
+        <mat-panel-description>
+          {{panelOpenState ? 'Showing' : 'Hiding'}} Sliders 
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-slider #matslider1 min="0" max="10" step="1" thumbLabel tickInterval="1" ></mat-slider>
+      <br>
+      <mat-divider></mat-divider>
+      <mat-slider #matslider2 min="10"  step="1" thumbLabel tickInterval="1"></mat-slider>
+      <br>
+      <mat-divider></mat-divider>
+      <mat-slider #matslider3 step="4" thumbLabel tickInterval="3"></mat-slider>
+      <br>
+      <mat-divider ></mat-divider>
+      <p>Total: {{matslider1.value + matslider2.value + matslider3.value}}</p>
+    </mat-expansion-panel>
+ </mat-accordion>
+
+<!--_____________________________________________________________________ -->
+<br>
+<mat-divider ></mat-divider>  
+<br>  
+    <button mat-flat-button color="primary" mat-button [matMenuTriggerFor]="travel">Travel Options</button>
+
+    <mat-menu #travel="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="stay">Stay</button>
+      <button mat-menu-item [matMenuTriggerFor]="go">Go</button>
+    </mat-menu>
+
+    <mat-menu #stay="matMenu">
+      <button mat-menu-item (click)="onClickMe('Airbnb')">Airbnb</button>
+      <button mat-menu-item (click)="onClickMe('Hotel')">Hotel</button>
+      <button mat-menu-item (click)="onClickMe('Motel')">Motel</button>
+    </mat-menu>
+
+    <mat-menu #go="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="air">Air</button>
+      <button mat-menu-item [matMenuTriggerFor]="ground">Ground</button>
+      <button mat-menu-item [matMenuTriggerFor]="water">Water</button>
+    </mat-menu>
+
+    <mat-menu #air="matMenu">
+        <button mat-menu-item (click)="onClickMe('plane')">Plane</button>
+        <button mat-menu-item (click)="onClickMe('helicopter')">Helicopter</button>
+        <button mat-menu-item (click)="onClickMe('hot air balloon')">Hot Air Balloon</button>
+    </mat-menu>
+    <mat-menu #ground="matMenu">
+        <button mat-menu-item (click)="onClickMe('train')">Train</button>
+        <button mat-menu-item (click)="onClickMe('monorail')">Monorail</button>
+        <button mat-menu-item (click)="onClickMe('automobile')">Automobile</button>
+    </mat-menu>
+    <mat-menu #water="matMenu">
+        <button mat-menu-item (click)="onClickMe('cruise ship')">Cruise Ship</button>
+        <button mat-menu-item (click)="onClickMe('ferry')">Ferry</button>
+        <button mat-menu-item (click)="onClickMe('inner tube')">Inner Tube</button>
+    </mat-menu>
+
+<p>You Picked: {{selected | titlecase}} </p>
+<br>
+<mat-form-field class="example-chip">
+    <mat-chip-list #chipList aria-label="Travel section">
+      <mat-chip  *ngFor="let method of methods" [removable]="removable" (removed)="removeT(method)">
+        {{method.name| titlecase}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </mat-form-field>
+<!--_____________________________________________________________________ -->
+<br>
+<br>
+<mat-divider ></mat-divider> 
+<br>
+
+<mat-form-field class="example-chip">
+    <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+               [removable]="removable" (removed)="remove(fruit)">
+        {{fruit.name}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="New fruit..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>

@@ -1,0 +1,68 @@
+<h1>
+    Welcome to {{ title }}!
+</h1>
+<br>
+
+<div class="center">
+    <a routerLink="/mat-form-field1">< Page 1</a>
+    <a routerLink="/mat-form-field2">< Page 2</a>
+    <a routerLink="/mat-form-field3">< Page 3</a>
+</div>
+<br>
+<mat-divider></mat-divider>
+<mat-tab-group color="accent">
+  <mat-tab label="Generic">
+  <button matTooltip="Info about this button"
+  aria-label="Heart button that displays a tooltip when focused or hovered over"
+  mat-icon-button>
+    <mat-icon>favorite</mat-icon>
+  </button>
+</mat-tab>
+  <mat-tab label="Primary">
+    <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-tab>
+  <mat-tab label="Accent">
+    <button mat-icon-button color="accent" aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-tab>
+  <mat-tab label="Warn">
+    <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-tab>
+  <mat-tab label="Disabled">
+    <button mat-icon-button disabled aria-label="Example icon-button with a heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button> 
+  </mat-tab>
+</mat-tab-group>
+<mat-divider></mat-divider> 
+<br>
+<mat-grid-list cols="4" rowHeight="100px" gutterSize = 5px>
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+          [colspan]="tile.cols"
+          [rowspan]="tile.rows"
+          [style.background]="tile.color"
+          matRipple
+          [matRippleCentered]="centered">
+          <mat-icon>touch_app</mat-icon>
+          <mat-grid-tile-header>Grid {{tile.text}} (dynamic ripple)</mat-grid-tile-header>
+    </mat-grid-tile>
+    <mat-grid-tile
+        colspan =4
+        id="five"
+        matRipple
+        [matRippleCentered]="center2"
+        [matRippleColor]="color">
+        <mat-grid-tile-header>Grid Five (centered ripple)</mat-grid-tile-header>
+        <mat-icon>touch_app</mat-icon>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br>
+  <br>
+  <mat-divider></mat-divider> 
+<br>

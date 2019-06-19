@@ -1,0 +1,68 @@
+<h1>
+  Welcome to {{ title }}!
+</h1>
+
+<div class="center">
+<a routerLink="/mat-form-field2">Page 2 ></a>
+<a routerLink="/mat-form-field3">Page 3 ></a>
+<a routerLink="/mat-form-field4">Page 4 ></a>
+</div>
+<br>
+
+<mat-card>
+    <mat-card-title>Pirate Ipsum</mat-card-title>
+    <mat-card-subtitle>Be Ye Ready?</mat-card-subtitle>
+    <mat-card-content>
+      <p>Loot Letter of Marque come about topsail pirate lad aft gangway heave down Nelsons folly. Heave down provost killick Cat o'nine tails log wherry galleon transom tackle Privateer. Man-of-war run a rig keelhaul Sink me nipper matey me gangplank weigh anchor code of conduct.
+          Pieces of Eight spanker killick aye gangplank ye quarterdeck boom Privateer parrel. Measured fer yer chains landlubber or just lubber gabion pillage overhaul pressgang lateen sail coffer tender hands. Blow the man down crimp boom bring a spring upon her cable spyglass main sheet prow tender bowsprit spanker.
+          Sea Legs scuttle pinnace code of conduct</p>
+    </mat-card-content>
+</mat-card>
+
+<br>
+
+<mat-card>
+    <mat-card-title>Autofill</mat-card-title>
+    <mat-card-content>
+        <form class = "tp-form">
+            <mat-form-field class = "tp-full-width">
+                <input type="text" matInput placeholder="US State" [formControl]="myControl" [matAutocomplete]="auto">
+            </mat-form-field>
+              <mat-autocomplete #auto = "matAutocomplete"> <!--exporting the autocomplete panel to local variable (auto)-->
+                <mat-option 
+                    *ngFor = "let state of filteredOptions| async" [value] = "state"> <!-- loop thru array to display items in panel-->
+                    {{state}} <!-- panel -->
+                </mat-option>
+              </mat-autocomplete>
+          </form>
+    </mat-card-content>
+  </mat-card>
+
+<br>
+
+<mat-card>
+  <mat-card-title>Checkboxes</mat-card-title>
+  <mat-card-content>
+      <mat-checkbox class="spacePlease" [(ngModel)]="checked">Check All</mat-checkbox>
+      <br>
+      <mat-checkbox class="spacePlease" [ngModel]="checked">Check me!</mat-checkbox>
+      <mat-checkbox class="spacePlease" [ngModel]="checked">Check me!</mat-checkbox>
+      <mat-checkbox class="spacePlease" [ngModel]="checked">Check me!</mat-checkbox>
+  </mat-card-content>
+</mat-card>
+
+<br>
+
+<mat-card>
+  
+    <mat-card-title>Datepicker</mat-card-title>
+    <p>Today is {{today | date}}</p>
+    <mat-form-field>
+    <mat-card-content>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker color="accent" #picker [startAt]="today"></mat-datepicker>
+    </mat-card-content>
+    </mat-form-field>
+</mat-card>
+<br>

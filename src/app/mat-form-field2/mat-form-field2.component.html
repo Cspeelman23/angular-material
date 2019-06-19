@@ -1,0 +1,62 @@
+<h1>
+  Welcome to {{ title }}!
+</h1>
+
+<div class="center">
+    <a routerLink="/mat-form-field1"> < Page 1</a>
+    <a routerLink="/mat-form-field3">Page 3 ></a>
+    <a routerLink="/mat-form-field4">Page 4 ></a>
+</div>
+ <br>
+
+<div class="example-container">
+  <br>
+  <form class= "alterMe">
+    <h2>Test Form</h2>
+      <mat-card >
+          <mat-card-content>
+              <mat-slide-toggle (change)="textEntry.disabled ? textEntry.enable() : textEntry.disable()">
+                Disable Text Entries
+              </mat-slide-toggle>
+          </mat-card-content>
+      </mat-card>
+      <br>
+      <mat-card id="special">
+          <mat-card-title>Spare Text</mat-card-title>
+          <mat-card-subtitle>Copy/Paste to test boxes below</mat-card-subtitle>
+          <mat-card-content>
+            <p>Loot Letter of Marque come about topsail pirate lad aft gangway heave down Nelsons folly. Heave down provost killick Cat o'nine tails log wherry galleon transom tackle Privateer. Man-of-war run a rig keelhaul Sink me nipper matey me gangplank weigh anchor code of conduct.</p>
+          </mat-card-content>
+      </mat-card>
+
+        <mat-form-field class="spacePlease">
+            <mat-label >Text Entry</mat-label>
+            <textarea [formControl]="textEntry" matInput placeholder=""></textarea>
+            <mat-hint>Manual</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="spacePlease">
+            <mat-label>Text Entry</mat-label>
+            <textarea [formControl]="textEntry" [mat-autosize] matInput placeholder=""></textarea>
+            <mat-hint>Auto-resize</mat-hint>
+        </mat-form-field>
+  </form>
+
+    <br>
+<form>
+  <mat-form-field class="spacePlease">
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option 1</mat-option>
+      <mat-option value="option">Option 2</mat-option>
+      <mat-option value="option">Option 3</mat-option>
+      <mat-option value="option">Option 3.5</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="spacePlease">
+      <mat-label>Label That Runs Away</mat-label>
+    <input matInput placeholder="Placeholder That Sticks Around">
+  </mat-form-field>
+  <br>
+</form>
+
+</div>

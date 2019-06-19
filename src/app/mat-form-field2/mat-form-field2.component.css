@@ -1,0 +1,26 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    border:solid rgb(255, 155, 115) 1px;
+    padding: 1%;
+  }
+  
+  .example-container > * { /*individual sections*/
+    width: 100%;
+  
+  }
+  mat-form-field{ /*only seen when within <form> element*/
+    width: 45%;
+  }
+  .spacePlease{
+    margin: 2%; 
+}
+
+#special{
+  color: rgb(64, 0, 124);
+}
+
+.alterMe{
+  background-color: rgb(233, 233, 233);
+  border: block black .5px;
+}

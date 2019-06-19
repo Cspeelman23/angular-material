@@ -1,0 +1,22 @@
+.spacePlease{
+    margin: 1%;
+    margin-left: 0px;
+}
+
+.tp-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+ }
+ .tp-full-width {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+ }
+
+ input{
+     border: solid rgb(142, 199, 209) 1px;
+     font-size: 125%;
+     color: gray;
+ }
+

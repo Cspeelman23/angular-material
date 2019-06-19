@@ -1,0 +1,17 @@
+.spacePlease{
+    margin: 2%; 
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+#picture{
+    max-width: 400px;
+}
+mat-expansion-panel{
+    background-color: rgb(173, 226, 213);
+}
+.example-chip{
+    width: 100%;
+  }
