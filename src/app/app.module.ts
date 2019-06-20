@@ -25,13 +25,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatRippleModule} from '@angular/material/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatTableModule} from '@angular/material/table';
 
 // components
 import { MatFormFieldComponent } from './mat-form-field/mat-form-field.component';
 import { MatFormField2Component } from './mat-form-field2/mat-form-field2.component';
 import { MatFormField3Component } from './mat-form-field3/mat-form-field3.component';
 import { MatFormField4Component } from './mat-form-field4/mat-form-field4.component';
+import { MatFormField5Component } from './mat-form-field5/mat-form-field5.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MatFormField4Component } from './mat-form-field4/mat-form-field4.compon
     MatFormFieldComponent,
     MatFormField2Component,
     MatFormField3Component,
-    MatFormField4Component
+    MatFormField4Component,
+    MatFormField5Component
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,8 @@ import { MatFormField4Component } from './mat-form-field4/mat-form-field4.compon
     MatGridListModule,
     MatRippleModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
   ],
   providers: [
     MatDatepickerModule
