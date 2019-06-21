@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-
+import { FFShopService } from '../ffshop.service';
+import {Observable} from 'rxjs';
 
 export interface PeriodicElement {
   name: string;
@@ -100,6 +101,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class MatFormField5Component implements OnInit {
   title = 'Matdemo Page 5';
+  FFSResponse: any;
   //DataSource is meant to serve a place to encapsulate any sorting, filtering, pagination, and data retrieval logic 
   DataArray= new MatTableDataSource(ELEMENT_DATA);
   displayedColumns: string[]= ['position', 'name', 'symbol', 'weight'];// controls order of cols
@@ -108,8 +110,13 @@ export class MatFormField5Component implements OnInit {
   applyFilter(filterValue: string) {
     this.DataArray.filter = filterValue.trim().toLowerCase();
   }
-
-  constructor() { }
+  constructor(){}
+  // constructor(FFSService: FFShopService) { 
+  //   FFSService.getJSON().subscribe(data => {
+  //     console.log(data);
+  //   });
+  
+ // }
 
   ngOnInit() {
   }
