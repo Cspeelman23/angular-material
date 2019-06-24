@@ -5,6 +5,8 @@ import { MatFormField2Component } from './mat-form-field2/mat-form-field2.compon
 import { MatFormField3Component } from './mat-form-field3/mat-form-field3.component';
 import { MatFormField4Component } from './mat-form-field4/mat-form-field4.component';
 import { MatFormField5Component } from './mat-form-field5/mat-form-field5.component';
+import { MatFormField6Component } from './mat-form-field6/mat-form-field6.component';
+
 
 const routes: Routes = [
   { path: 'mat-form-field', component: MatFormFieldComponent },
@@ -12,6 +14,7 @@ const routes: Routes = [
   { path: 'mat-form-field3', component: MatFormField3Component },
   { path: 'mat-form-field4', component: MatFormField4Component },
   { path: 'mat-form-field5', component: MatFormField5Component },
+  { path: 'mat-form-field6', component: MatFormField6Component },
   { path: '**', component: MatFormFieldComponent }
 ];
 

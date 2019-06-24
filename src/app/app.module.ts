@@ -27,7 +27,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 //import { HttpClient } from '@angular/common/http'; 
-
+import { HttpClientModule }    from '@angular/common/http';
 
 // components
 import { MatFormFieldComponent } from './mat-form-field/mat-form-field.component';
@@ -36,6 +36,7 @@ import { MatFormField3Component } from './mat-form-field3/mat-form-field3.compon
 import { MatFormField4Component } from './mat-form-field4/mat-form-field4.component';
 import { MatFormField5Component } from './mat-form-field5/mat-form-field5.component';
 import { FFShopService } from './ffshop.service';
+import { MatFormField6Component } from './mat-form-field6/mat-form-field6.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FFShopService } from './ffshop.service';
     MatFormField2Component,
     MatFormField3Component,
     MatFormField4Component,
-    MatFormField5Component
+    MatFormField5Component,
+    MatFormField6Component
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,8 @@ import { FFShopService } from './ffshop.service';
     MatRippleModule,
     MatTooltipModule,
     MatSnackBarModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [
     MatDatepickerModule,
